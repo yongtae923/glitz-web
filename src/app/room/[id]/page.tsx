@@ -11,7 +11,7 @@ export default function RoomPage() {
   const router = useRouter();
   const { id } = useParams<{ id: string }>(); // 🔹 id의 타입을 명확히 지정
   const [room, setRoom] = useState<RoomData | null>(null);
-  const [hostEmail, setHostEmail] = useState<string>("로딩 중...");
+  // const [hostEmail, setHostEmail] = useState<string>("로딩 중...");
   const [memberEmails, setMemberEmails] = useState<string[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -28,8 +28,8 @@ export default function RoomPage() {
       setRoom(roomData);
 
       // 🔹 방장 이메일 가져오기
-      const hostEmail = await getUserEmail(roomData.hostId);
-      setHostEmail(hostEmail);
+      // const hostEmail = await getUserEmail(roomData.hostId);
+      // setHostEmail(hostEmail);
 
       // 🔹 방 참가 (memberIds에 사용자 추가)
       if (!roomData.memberIds.includes(user.uid)) {
