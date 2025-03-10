@@ -21,24 +21,25 @@ export default function SignUpPage() {
   };
 
   return (
-    <div style={{ textAlign: "center", marginTop: "50px" }}>
-      <h1>회원가입</h1>
+    <div className="text-center mt-12">
+      <h1 className="text-3xl font-bold mb-6">회원가입</h1>
       <input
         type="email"
         placeholder="이메일 입력"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
-        style={{ display: "block", margin: "10px auto", padding: "10px" }}
+        className="block mx-auto mb-4 p-2 border border-gray-300 rounded"
       />
       <input
         type="password"
         placeholder="비밀번호 입력"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
-        style={{ display: "block", margin: "10px auto", padding: "10px" }}
+        className="block mx-auto mb-4 p-2 border border-gray-300 rounded"
       />
-      <button onClick={handleSignUp} 
-        style={{ margin: "10px", padding: "10px 20px", backgroundColor: "#28a745", color: "white", border: "none", borderRadius: "5px" }}
+      <button 
+        onClick={handleSignUp}
+        className="mx-2 my-2 px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600"
       >
         회원가입
       </button>

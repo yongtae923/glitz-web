@@ -62,14 +62,14 @@ export default function RoomPage() {
   }
 
   return (
-    <div style={{ textAlign: "center", marginTop: "50px" }}>
-      <h1>{room?.title} 방</h1>
+    <div className="text-center mt-12">
+      <h1 className="text-3xl font-bold mb-6">{room?.title} 방</h1>
 
-      <h2>참여 멤버</h2>
+      <h2 className="text-2xl font-semibold mb-4">참여 멤버</h2>
       {memberEmails.length > 0 ? (
-        <ul style={{ listStyleType: "none", padding: 0 }}>
+        <ul className="list-none p-0">
           {memberEmails.map((email, index) => (
-            <li key={index} style={{ marginBottom: "5px" }}>{email}</li>
+            <li key={index} className="mb-2">{email}</li>
           ))}
         </ul>
       ) : (
@@ -78,7 +78,7 @@ export default function RoomPage() {
 
       <button 
         onClick={() => router.push("/")}
-        style={{ marginTop: "20px", padding: "10px 20px", backgroundColor: "#6c757d", color: "white", border: "none", borderRadius: "5px" }}
+        className="mt-5 px-4 py-2 bg-gray-500 text-white rounded"
       >
         뒤로 가기
       </button>

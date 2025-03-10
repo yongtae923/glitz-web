@@ -28,44 +28,37 @@ export default function Home() {
   }, []);
 
   return (
-    <div style={{ textAlign: "center", marginTop: "50px" }}>
-      <h1>블리츠</h1>
+    <div className="text-center mt-12">
+      <h1 className="text-3xl font-bold mb-6">블리츠</h1>
 
       {user ? (
         <>
-          <p>로그인한 사용자: {user.email}</p>
+          <p className="mb-4">로그인한 사용자: {user.email}</p>
           <button 
             onClick={logout}
-            style={{ margin: "10px", padding: "10px 20px", backgroundColor: "red", color: "white", border: "none", borderRadius: "5px" }}
+            className="mx-2 my-2 px-4 py-2 bg-red-500 text-white rounded"
           >
             로그아웃
           </button>
           <button 
             onClick={() => router.push("/create-room")}
-            style={{ margin: "10px", padding: "10px 20px", backgroundColor: "#28a745", color: "white", border: "none", borderRadius: "5px" }}
+            className="mx-2 my-2 px-4 py-2 bg-green-500 text-white rounded"
           >
             글방 만들기
           </button>
           
-          <h2 style={{ marginTop: "20px" }}>참여 가능한 글방</h2>
+          <h2 className="mt-8 mb-4 text-2xl font-semibold">참여 가능한 글방</h2>
 
           {/* 🔹 로딩 중이면 "불러오는 중..." 표시 */}
           {loading ? (
             <p>불러오는 중...</p>
           ) : rooms.length > 0 ? (
-            <ul style={{ listStyle: "none", padding: 0 }}>
+            <ul className="list-none p-0">
               {rooms.map(room => (
-                <li key={room.id} style={{ margin: "10px 0" }}>
+                <li key={room.id} className="my-2">
                   <button
                     onClick={() => router.push(`/room/${room.id}`)}
-                    style={{
-                      padding: "10px",
-                      backgroundColor: "#007bff",
-                      color: "white",
-                      border: "none",
-                      borderRadius: "5px",
-                      cursor: "pointer",
-                    }}
+                    className="px-4 py-2 bg-blue-500 text-white rounded cursor-pointer"
                   >
                     {room.title}
                   </button>
@@ -79,7 +72,7 @@ export default function Home() {
       ) : (
         <button 
           onClick={() => router.push("/login")}
-          style={{ margin: "10px", padding: "10px 20px", backgroundColor: "#007bff", color: "white", border: "none", borderRadius: "5px" }}
+          className="mx-2 my-2 px-4 py-2 bg-blue-500 text-white rounded"
         >
           로그인
         </button>
